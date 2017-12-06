@@ -56,8 +56,8 @@ function fish_prompt --description 'Write out the prompt'
         set status_color $fish_color_error
     end
 
-    set -l prompt_status (set_color -r $status_color)" $cmd_status "(set_color normal)
-    set -l prompt_duration (set_color -r bryellow)" $cmd_duration "(set_color normal)
+    set -l prompt_duration (set_color -b bryellow black)" $cmd_duration "(set_color normal)
+    set -l prompt_status (set_color -b $status_color black)" $cmd_status "(set_color normal)
     set -l prompt_cwd (set_color $fish_color_cwd)(prompt_pwd)(set_color normal)
     set -l prompt_vcs (__fish_git_prompt)
 
