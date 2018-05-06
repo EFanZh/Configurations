@@ -1,6 +1,6 @@
 function fish_prompt --description 'Write out the prompt'
     set -l cmd_status $status
-    set -l duration $CMD_DURATION
+    set -l duration "0$CMD_DURATION"
 
     set -l duration_days (math "$duration / 86400000")
     set -l duration_days_text
@@ -44,7 +44,7 @@ function fish_prompt --description 'Write out the prompt'
                                          $duration_milliseconds_text)
 
     set -l separator_length (math $COLUMNS - '(' (string join + (string length $cmd_status $cmd_duration) 6) ')')
-    set -l separator (string repeat -n $separator_length ─)
+    set -l separator (printf '-%.0s' (seq $separator_length))
 
     set -l prompt_separator (set_color brblack)$separator(set_color normal)
 
