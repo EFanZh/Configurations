@@ -44,7 +44,7 @@ function fish_prompt --description 'Write out the prompt'
                                          $duration_milliseconds_text)
 
     set -l separator_length (math $COLUMNS - '(' (string join + (string length $cmd_status $cmd_duration) 6) ')')
-    set -l separator (printf '-%.0s' (seq $separator_length))
+    set -l separator (printf -- '-%.0s' (seq $separator_length))
 
     set -l prompt_separator (set_color brblack)$separator(set_color normal)
 
