@@ -61,5 +61,5 @@ function fish_prompt --description 'Write out the prompt'
     set -l prompt_cwd (set_color $fish_color_cwd)(prompt_pwd)(set_color normal)
     set -l prompt_vcs (__fish_git_prompt)
 
-    echo -ns $prompt_separator ' ' $prompt_duration ' ' $prompt_status \n $prompt_cwd $prompt_vcs ' $ '
+    echo -ns \r $prompt_separator ' ' $prompt_duration ' ' $prompt_status \n $prompt_cwd $prompt_vcs ' $ '
 end
