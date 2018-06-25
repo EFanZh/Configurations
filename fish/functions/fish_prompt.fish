@@ -43,6 +43,12 @@ function fish_prompt --description 'Write out the prompt'
                                          $duration_seconds_text \
                                          $duration_milliseconds_text)
 
+    if [ -z $VIRTUAL_ENV ]
+        set virtualenv_prompt ''
+    else
+        set virtualenv_prompt '('(basename $VIRTUAL_ENV)') '
+    end
+
     set -l separator_length (math $COLUMNS - '(' (string join + (string length $cmd_status $cmd_duration) 6) ')')
     set -l separator (printf -- '-%.0s' (seq $separator_length))
 
@@ -61,5 +67,5 @@ function fish_prompt --description 'Write out the prompt'
     set -l prompt_cwd (set_color $fish_color_cwd)(prompt_pwd)(set_color normal)
     set -l prompt_vcs (__fish_git_prompt)
 
-    echo -ns \r $prompt_separator ' ' $prompt_duration ' ' $prompt_status \n $prompt_cwd $prompt_vcs ' $ '
+    echo -ns \r $prompt_separator ' ' $prompt_duration ' ' $prompt_status \n $virtualenv_prompt $prompt_cwd $prompt_vcs ' $ '
 end
