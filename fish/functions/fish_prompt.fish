@@ -2,28 +2,28 @@ function fish_prompt --description 'Write out the prompt'
     set -l cmd_status $status
     set -l duration "0$CMD_DURATION"
 
-    set -l duration_days (math "$duration / 86400000")
+    set -l duration_days (math "floor($duration / 86400000)")
     set -l duration_days_text
 
     if [ $duration_days -gt 0 ]
         set duration_days_text "$duration_days d"
     end
 
-    set -l duration_hours (math "($duration / 3600000) % 24")
+    set -l duration_hours (math "floor($duration / 3600000) % 24")
     set -l duration_hours_text
 
     if [ $duration_hours -gt 0 ]
         set duration_hours_text "$duration_hours h"
     end
 
-    set -l duration_minutes (math "($duration / 60000) % 60")
+    set -l duration_minutes (math "floor($duration / 60000) % 60")
     set -l duration_minutes_text
 
     if [ $duration_minutes -gt 0 ]
         set duration_minutes_text "$duration_minutes m"
     end
 
-    set -l duration_seconds (math "($duration / 1000) % 60")
+    set -l duration_seconds (math "floor($duration / 1000) % 60")
     set -l duration_seconds_text
 
     if [ $duration_seconds -gt 0 ]
