@@ -48,11 +48,9 @@ function fish_prompt --description 'Write out the prompt'
 
     set -l prompt_separator (set_color brblack)$separator(set_color normal)
 
-    set -l status_color
+    set -l status_color green
 
-    if [ $cmd_status -eq 0 ]
-        set status_color green
-    else
+    if [ $cmd_status -ne 0 ]
         set status_color $fish_color_error
     end
 
@@ -61,16 +59,16 @@ function fish_prompt --description 'Write out the prompt'
 
     set -l virtualenv_prompt
 
-    if [ -z $VIRTUAL_ENV ]
-        set virtualenv_prompt ''
-    else
+    if set -q VIRTUAL_ENV
         set virtualenv_prompt '('(basename $VIRTUAL_ENV)') '
     end
 
     set -l prompt_cwd (set_color $fish_color_cwd)(prompt_pwd)(set_color normal)
     set -l prompt_vcs (fish_git_prompt)
 
+    set -l prompt_suffix '$'
+
     echo -ns \
         \r $prompt_separator ' ' $prompt_duration ' ' $prompt_status \n \
-        $virtualenv_prompt $prompt_cwd $prompt_vcs ' $ '
+        $virtualenv_prompt $prompt_cwd $prompt_vcs ' ' $prompt_suffix ' '
 end
