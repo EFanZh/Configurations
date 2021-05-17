@@ -1,0 +1,23 @@
+[gui]
+fontui = -family sans-serif -size 9
+fontdiff = -family monospace -size 9
+gcwarning = false
+
+[guitool "Open File"]
+cmd = xdg-open \"$FILENAME\"
+needsfile = yes
+noconsole = yes
+
+[guitool "Open with Meld"]
+cmd = meld \"$FILENAME\"
+needsfile = yes
+noconsole = yes
+
+[guitool "Remove File"]
+cmd = rm \"$FILENAME\"
+needsfile = yes
+noconsole = yes
+
+[user]
+name = EFanZh
+email = efanzh@gmail.com
