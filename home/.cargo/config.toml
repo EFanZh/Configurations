@@ -1,5 +1,5 @@
 [build]
-rustc-wrapper = sccache
+rustc-wrapper = "sccache"
 rustflags = ["-C", "target-cpu=native"]
 
 [profile.release]
