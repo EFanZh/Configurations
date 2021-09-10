@@ -18,6 +18,9 @@ cmd = rm \"$FILENAME\"
 needsfile = yes
 noconsole = yes
 
+[submodule]
+recurse = yes
+
 [user]
 name = EFanZh
 email = efanzh@gmail.com
