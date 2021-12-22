@@ -1,3 +1,10 @@
+[diff]
+wordRegex = [A-Z]+|[a-z]+|[0-9]+|\\S
+
+[fetch]
+prune = yes
+pruneTags = yes
+
 [gui]
 fontui = -family sans-serif -size 9
 fontdiff = -family monospace -size 9
