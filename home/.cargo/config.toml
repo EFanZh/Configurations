@@ -1,3 +1,2 @@
 [build]
-rustc-wrapper = "sccache"
-rustflags = ["-C", "target-cpu=native"]
+rustflags = ["-C", "symbol-mangling-version=v0"]
