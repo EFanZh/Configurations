@@ -1,10 +1,6 @@
 [diff]
 wordRegex = [A-Z]+|[a-z]+|[0-9]+|\\S
 
-[fetch]
-prune = yes
-pruneTags = yes
-
 [gui]
 fontui = -family sans-serif -size 9
 fontdiff = -family monospace -size 9
@@ -19,14 +15,6 @@ noconsole = yes
 cmd = meld \"$FILENAME\"
 needsfile = yes
 noconsole = yes
-
-[guitool "Remove File"]
-cmd = rm \"$FILENAME\"
-needsfile = yes
-noconsole = yes
-
-[submodule]
-recurse = yes
 
 [user]
 name = EFanZh
