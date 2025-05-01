@@ -1,4 +1,5 @@
 [diff]
+algorithm = patience
 wordRegex = [A-Z]+|[a-z]+|[0-9]+|\\S
 
 [gui]
